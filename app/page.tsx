@@ -2,9 +2,20 @@
 
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { BarChart2, TrendingUp, ArrowRight } from "lucide-react";
+import { BarChart2, TrendingUp, ArrowRight, Code2 } from "lucide-react";
 
 const personas = [
+  {
+    key: "tech",
+    icon: <Code2 size={32} />,
+    title: "Software Engineer",
+    subtitle: "Rahul Sharma · TechCorp · Bangalore",
+    description:
+      "See how Aaptor benchmarks engineering competencies — from DSA and system design proficiency to code quality, architecture thinking, and team collaboration.",
+    tags: ["DSA", "System Design", "Code Quality", "Architecture"],
+    cta: "Explore Tech Journey",
+    path: "/demo/page1",
+  },
   {
     key: "finance",
     icon: <BarChart2 size={32} />,
@@ -51,7 +62,7 @@ export default function LandingPage() {
       className="min-h-screen flex flex-col items-center justify-center px-4 py-16"
       style={{ background: "var(--bg-primary)" }}
     >
-      <div className="w-full max-w-3xl flex flex-col items-center gap-10">
+      <div className="w-full max-w-5xl flex flex-col items-center gap-10">
 
         {/* Logo + tagline */}
         <div className="flex flex-col items-center gap-3 text-center">
@@ -95,7 +106,7 @@ export default function LandingPage() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
           {personas.map((p, i) => (
             <motion.div
               key={p.key}
